@@ -1,5 +1,7 @@
 # asuna-dist
 
+[![Latest release](https://img.shields.io/github/v/release/snowdango/asuna-dist?label=latest)](https://github.com/snowdango/asuna-dist/releases/latest)
+
 JetBrains IDE 向けプラグイン **Asuna** の配布リポジトリです。
 
 このリポジトリは、[JetBrains のカスタムプラグインリポジトリ](https://plugins.jetbrains.com/docs/intellij/custom-plugin-repository.html)として機能します。`updatePlugins.xml` が最新バージョンのメタデータを公開し、実体の zip は [Releases](https://github.com/snowdango/asuna-dist/releases) で配布されます。IDE にこのリポジトリを登録しておくと、Asuna のインストールおよび自動アップデートが行えます。
@@ -24,7 +26,7 @@ JetBrains IDE 向けプラグイン **Asuna** の配布リポジトリです。
 | --- | --- |
 | プラグイン ID | `com.snowdango.asuna` |
 | 対応ビルド | `since-build 242`（2024.2 以降の IntelliJ ベース IDE） |
-| 最新バージョン | [`26.07.28`](https://github.com/snowdango/asuna-dist/releases/tag/v26.07.28) |
+| 最新バージョン | [Releases の最新版](https://github.com/snowdango/asuna-dist/releases/latest)（`updatePlugins.xml` の `version` 属性と常に一致します） |
 
 ## 手動インストール
 
@@ -35,11 +37,20 @@ JetBrains IDE 向けプラグイン **Asuna** の配布リポジトリです。
 3. 歯車アイコン（⚙）から **Install Plugin from Disk...** を選択し、ダウンロードした zip を指定します。
 4. IDE を再起動します。
 
+## 更新の仕組み
+
+新しいバージョンがリリースされると、次の 2 つが自動で行われます。
+
+1. [Releases](https://github.com/snowdango/asuna-dist/releases) に `v<version>` タグのリリースが作成され、`asuna-<version>.zip` が添付されます。
+2. `updatePlugins.xml` の `version` と `url` が新しいバージョンに書き換えられます。
+
+カスタムリポジトリを登録している IDE は `updatePlugins.xml` の変更を検知して更新を通知します。`updatePlugins.xml` を手動で編集する必要はありません。
+
 ## リポジトリ構成
 
 | ファイル | 説明 |
 | --- | --- |
-| `updatePlugins.xml` | カスタムプラグインリポジトリのメタデータ（最新バージョン・ダウンロード URL・対応ビルド） |
+| `updatePlugins.xml` | カスタムプラグインリポジトリのメタデータ（最新バージョン・ダウンロード URL・対応ビルド）。リリースごとに自動更新されます。 |
 
 ## リンク
 
