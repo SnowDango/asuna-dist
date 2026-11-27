@@ -1,7 +1,7 @@
 <plugins>
   <plugin id="com.snowdango.asuna"
-          url="https://github.com/snowdango/asuna-dist/releases/download/v26.11.14/asuna-26.11.14.zip"
-          version="26.11.14">
+          url="https://github.com/snowdango/asuna-dist/releases/download/v26.11.15/asuna-26.11.15.zip"
+          version="26.11.15">
     <name>Asuna</name>
     <idea-version since-build="242"/>
   </plugin>
